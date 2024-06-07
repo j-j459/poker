@@ -1,0 +1,68 @@
+<h1>(Geekpoker)</h1>
+<h3>新規poker</h3>
+<%= form_for @chase do |f| %>
+
+
+
+
+  <div class="field">
+    <%= f.label :ace %>
+    <%= f.select :ace, 
+    ["カード1"], 
+    include_blank: "選択して下さい" %>
+  </div>
+
+  <div class="field">
+  <%= f.label :king %>
+  <%= f.select :king, 
+  ["カード2"], 
+  include_blank: "選択して下さい" %>
+</div>
+
+  <div class="field">
+    <%= f.label :項目名  %>
+    <%= f.number_field :queen, :size => 10 %>
+  </div>
+
+  <div class="field">
+  <%= f.label :項目名  %>
+  <%= f.number_field :jack, :size => 10 %>
+</div>
+
+<div class="field">
+<%= f.label :項目名  %>
+<%= f.number_field :ten, :size => 10 %>
+</div>
+
+<div class="field">
+<%= f.label :項目名  %>
+<%= f.number_field :nine, :size => 10 %>
+</div>
+
+<div class="field">
+<%= f.label :項目名  %>
+<%= f.number_field :eight, :size => 10 %>
+</div>
+
+<div class="field">
+<%= f.label :項目名  %>
+<%= f.number_field :seven, :size => 10 %>
+</div>
+
+<div class="field">
+<%= f.label :項目名  %>
+<%= f.number_field :six, :size => 10 %>
+</div>
+
+  <div class="field">
+    <%= f.label :body %>
+    <%= f.text_area :body, :size => "30x2" %>
+  </div>
+
+
+
+
+  <%= f.submit "送信する" %>
+<% end %>
+
+<%= link_to "ホームに戻る", chases_path %>

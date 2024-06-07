@@ -1,0 +1,30 @@
+<h1>Geekpoker</h1>
+<h3>Chase詳細</h3>
+<div class="chase">
+  <p><%= @chase. body%></p>
+  <p><%= @chase.created_at %></p>
+</div>
+<div class="comment-wrapper">
+  <p>コメント一覧</p>
+  <% @comments.each do |c| %>
+    <div>
+      <%= c.user.email unless c.user.blank? %>
+      <br>
+      <%= c.content %>
+    </div>
+      <br>
+  <% end %>
+
+
+
+  <% if user_signed_in? %>
+    <%= form_with(model: [@chase, @comment], local: true) do |f| %>
+      <%= f.text_area :content %>
+      <%= button_tag type: "submit" do %>
+      <i class="far fa-comments"></i> コメントする
+      <% end %>
+    <% end %>
+  <% end %>
+</div>
+<%= link_to "一覧に戻る", chases_path %>
+<%= link_to "編集する", edit_chase_path(@chase.id) %>

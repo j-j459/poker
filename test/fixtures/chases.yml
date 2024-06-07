@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  body: MyText
+  ace: MyString
+  king: MyString
+  queen: 1.5
+  jack: 1.5
+  ten: 1.5
+  nine: 1.5
+  eight: 1.5
+  seven: 1.5
+  six: MyString
+  float: MyString
+
+two:
+  body: MyText
+  ace: MyString
+  king: MyString
+  queen: 1.5
+  jack: 1.5
+  ten: 1.5
+  nine: 1.5
+  eight: 1.5
+  seven: 1.5
+  six: MyString
+  float: MyString

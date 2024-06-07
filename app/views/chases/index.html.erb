@@ -1,0 +1,61 @@
+<h1>Geekpoker</h1>
+<h3>Poker一覧</h3>
+
+<%= link_to "新規投稿へ",new_chase_path, class:"h2" %>
+
+<div class="chases-container">
+  <% @chases.each do |t| %>
+    <div class="chase">
+      <% if t.user %>
+        <%= t.user.email %>
+        <%= image_tag t.user.image_url, size: "250x200" if t.user.image? %>
+      <% else %>
+        <p>ユーザー情報がありません</p>
+      <% end %>
+      
+      <% if user_signed_in? %>
+        <%= link_to "マイページへ", user_path(current_user.id) %>
+      <% end %>
+      
+      <h3>投稿を検索</h3>
+      <%= form_tag({controller: "chases", action: "index"}, method: :get) do %>
+        <%= text_field_tag :search %>
+        <%= submit_tag '検索する' %>
+      <% end %>
+      
+      <%= t.body %>
+      <%= t.ace %>
+      <%= t.king %>
+      <%= t.queen %>
+      <%= t.jack %>
+      <%= t.ten %>
+      <%= t.nine %>
+      <%= t.eight %>
+      <%= t.seven %>
+      <%= t.six %>
+
+
+
+      <%= link_to "詳細へ", chase_path(t.id) %>
+      <%= link_to "編集する", edit_chase_path(t.id) %>
+      <%= button_to "削除する", chase_path(t.id), method: :delete %>
+    </div>
+
+
+
+
+    <div>
+   <p1>質問</p1>
+   <p>ここから</p>
+</div>
+<div class="box"> 
+</div>
+
+<header class="header-nav">
+<nav><a href=".first-block">Home</a></nav>
+<nav><a href=".second-block">About me</a></nav>
+<nav><a href=".third-block">Recent Activity</a></nav>
+</header>
+
+  <% end %>
+</div>

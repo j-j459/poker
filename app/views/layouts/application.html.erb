@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <title>Poker</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200..900&display=swap" rel="stylesheet">
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  </head>
+  
+
+<body>
+  <header>
+    <h1>Geekpoker</h1>
+    <div class="header-list">
+    <% if user_signed_in? %>
+    <li><%= button_to 'ログアウト', destroy_user_session_path, method: :delete %></li>
+    <% else %>
+    <li><%= link_to "新規登録",new_user_registration_path, class:"post" %></li>
+   <li><%= link_to "ログイン", new_user_session_path %></li>
+      <li><%= link_to "一覧に戻る", chases_path, class:"show" %></li>
+
+    <% end %>
+  </div>
+  </header>
+  
+  <main>
+    <%= yield %>
+  </main>
+
+  
+
+  <footer>
+  </footer>
+</body>
+
+</html>
