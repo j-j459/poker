@@ -55,3 +55,4 @@ gem  'devise'
 group :production do
   gem "pg", "~> 1.4"
 end
+
