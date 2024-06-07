@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   end
   
   
-  resources :relationships,       only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
   root 'chases#top'
 
 end
